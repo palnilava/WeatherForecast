@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import React from 'react';
+import WeatherForecast from './Components/Weatherforecast';
 import './App.css';
 
-function App() {
+import BgVideo from './assests/BgVideo.mp4'
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <video autoPlay muted loop className="backgroundVideo">
+        <source src={BgVideo} type="video/mp4" />
+      </video>
+      <div className="contentWrapper">      
+      <WeatherForecast />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
